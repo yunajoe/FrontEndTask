@@ -41,7 +41,8 @@ function App() {
   // 1초씩 자동감소 >> setInterval 사용 
   // 진행중일 때 누르면 -1 이 안됨 
   const autodecrease = () => {
-    if(number > 0){
+    setPlay(true)
+    if( play === true && number > 0){
       const interval = setInterval(()=>{
         setNumber((prev) => prev-1)
       }, 1000)
@@ -53,10 +54,12 @@ function App() {
   // clearInterval 사용하기 
   const stopfunc = () => {
     clearInterval(timeId)
-  }
-
+    setPlay(false)
+  }  
   const resetfunc = () =>{
+      clearInterval(timeId)
       setNumber(0)
+      setPlay(false)
   }  
   return (
     <div>
