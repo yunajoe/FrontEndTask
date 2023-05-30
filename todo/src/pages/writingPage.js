@@ -33,6 +33,8 @@ function WritingPage({Todolist, setTodoList}){
         navigate(`/`)          
     }
 
+    
+
     return(
         <div>
             title
